@@ -44,6 +44,7 @@ Key findings:
    - CPU & memory usage
 
 📊 Results Summary
+
 Job Stability: The default scheduler is unreliable for concurrent Spark jobs, frequently causing deadlocks. Volcano is 100% reliable due to its "all-or-nothing" gang scheduling.
 Performance & Throughput: Volcano is not just more stable, it is significantly faster. By eliminating idle wait times and managing queues efficiently, it completed jobs faster and handled a workload more efficiently in our tests.
 
