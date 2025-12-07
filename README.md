@@ -23,17 +23,19 @@ Key findings:
 
 1. Environment Setup
    - Multi‑node Kubernetes cluster (1 control plane, 3–7 worker nodes).
-   - Prometheus + Grafana monitoring stack.
-
+   - Prometheus + Grafana monitoring stack using Helm.
+   - Set up Spark Operator using Helm.
+     
 2. Workload
+   - Defined standardized Spark benchmark jobs.
    - Apache Spark jobs submitted via Spark Operator.
    - Benchmarks defined in YAML manifests.
 
-3. Schedulers Tested
+4. Schedulers Tested
    - Default kube‑scheduler (baseline).
    - Volcano scheduler (`schedulerName: volcano`).
 
-4. Metrics Collected
+5. Metrics Collected
    - Job success rate
    - Job completion time
    - Scheduler throughput
