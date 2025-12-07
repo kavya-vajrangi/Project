@@ -24,7 +24,8 @@ Key findings:
 1. Environment Setup
    - Multi‑node Kubernetes cluster (1 control plane, 3–7 worker nodes).
    - Prometheus + Grafana monitoring stack using Helm.
-   - Set up Spark Operator using Helm.
+   - Spark Operator using Helm.
+   - Volcano scheduler using Helm.
      
 2. Workload
    - Defined standardized Spark benchmark jobs.
