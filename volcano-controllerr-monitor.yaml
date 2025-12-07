@@ -1,0 +1,28 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  annotations:
+    meta.helm.sh/release-name: prometheus
+    meta.helm.sh/release-namespace: monitoring
+  name: volcano-controller-monitor
+  namespace: monitoring
+   labels:
+    app.kubernetes.io/instance: Prometheus
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: kube-prometheus-stack
+    app.kubernetes.io/version: 77.5.0
+    chart: kube-prometheus-stack-77.5.0
+    heritage: Helm
+    release: prometheus
+spec:
+  # This targets the 'volcano-scheduler' service specifically.
+  selector:
+    matchLabels:
+      app: volcano-controller
+  # This tells the monitor to look for the service in the 'volcano-system' namespace.
+  namespaceSelector:
+    matchNames:
+    - volcano-system
+  endpoints:
+  - port: metrics
+    interval: 30s
